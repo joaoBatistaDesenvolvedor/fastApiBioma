@@ -1,0 +1,389 @@
+{
+	"info": {
+		"_postman_id": "ae8da7d4-0808-4606-8ebb-c15d9fbc3c27",
+		"name": "FastApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9661084"
+	},
+	"item": [
+		{
+			"name": "cadastra empresa",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Nome\": \"apple\",\r\n  \"CNPJ\": \"10102211\",\r\n  \"Descricao\": \"Descrição da apple\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}empresa",
+					"host": [
+						"{{HOST}}empresa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cria produto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Nome\": \"macbook air\",\r\n  \"Valor\": 16.000,\r\n  \"Descricao\": \"Descrição do produto exemplo\",\r\n  \"Quantidade\": 500,\r\n  \"EmpresaID\": 6  // Substitua pelo ID da empresa correspondente\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}produtos",
+					"host": [
+						"{{HOST}}produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comprar produto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cnpj\": \"10102211\",\r\n    \"idProduto\": 4,\r\n    \"quantidade\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}produtos/comprar",
+					"host": [
+						"{{HOST}}produtos"
+					],
+					"path": [
+						"comprar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "criar colaborador",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Nome\": \"aninha\",\r\n    \"CPF\": \"12345678916\",\r\n    \"Email\": \"aninha@example.com\",\r\n    \"Senha\": \"123456789\",\r\n    \"Cargo\": \"dev senior python\",\r\n    \"EmpresaID\": 6\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}colaborador",
+					"host": [
+						"{{HOST}}colaborador"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "busca uma unica empresa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}empresa/123456789",
+					"host": [
+						"{{HOST}}empresa"
+					],
+					"path": [
+						"123456789"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pegar todas as empresas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}empresa",
+					"host": [
+						"{{HOST}}empresa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pega todos os produtos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}produtos",
+					"host": [
+						"{{HOST}}produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pega um produto por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}produtos/2",
+					"host": [
+						"{{HOST}}produtos"
+					],
+					"path": [
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lista todos produtos empresa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}produtos/empresa/10102211",
+					"host": [
+						"{{HOST}}produtos"
+					],
+					"path": [
+						"empresa",
+						"10102211"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "lista todos colaboradores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}colaborador",
+					"host": [
+						"{{HOST}}colaborador"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "lista colaborador por cpf",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}colaborador/12345678904",
+					"host": [
+						"{{HOST}}colaborador"
+					],
+					"path": [
+						"12345678904"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "lista colaboradores por empresa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}colaborador/empresa/10102211",
+					"host": [
+						"{{HOST}}colaborador"
+					],
+					"path": [
+						"empresa",
+						"10102211"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "atualiza empresa",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Nome\": \"microsoft\",\r\n    \"CNPJ\": \"123456789\",  // CNPJ da empresa que deseja atualizar\r\n    \"Descricao\": \"computer\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}empresa/123456789",
+					"host": [
+						"{{HOST}}empresa"
+					],
+					"path": [
+						"123456789"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "atualiza produto",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Nome\": \"Iphone 14\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}produtos/4",
+					"host": [
+						"{{HOST}}produtos"
+					],
+					"path": [
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "atualiza colaborador",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Nome\": \"João Silva\",\r\n    \"EmpresaID\": 5\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}colaborador/12345678904",
+					"host": [
+						"{{HOST}}colaborador"
+					],
+					"path": [
+						"12345678904"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleta empresa",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}empresa/123456789",
+					"host": [
+						"{{HOST}}empresa"
+					],
+					"path": [
+						"123456789"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletaProduto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}produtos/5",
+					"host": [
+						"{{HOST}}produtos"
+					],
+					"path": [
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleta colaborador",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}colaborador/12345678904",
+					"host": [
+						"{{HOST}}colaborador"
+					],
+					"path": [
+						"12345678904"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logar colaborador",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"aninha@example.com\",\r\n    \"password\":\"123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}colaborador/logar",
+					"host": [
+						"{{HOST}}colaborador"
+					],
+					"path": [
+						"logar"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
